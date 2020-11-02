@@ -32,3 +32,10 @@ Route::post('/itemclass/{id}', 'App\Http\Controllers\ItemClassController@update'
 Route::delete('/itemclass/{id}', 'App\Http\Controllers\ItemClassController@destroy');
 Route::get('/itemclass/fetchitemclassesdata', 'App\Http\Controllers\ItemClassController@fetchItemClassesData');
 Route::get('/itemclass/{id}/fetchitemclassdatabyid', 'App\Http\Controllers\ItemClassController@fetchItemClassDataById');
+
+Route::get('/supplier', 'App\Http\Controllers\SupplierController@index');
+Route::post('/supplier/store', 'App\Http\Controllers\SupplierController@store');
+Route::post('/supplier/{id}', 'App\Http\Controllers\SupplierController@update');
+Route::delete('/supplier/{id}', 'App\Http\Controllers\SupplierController@destroy');
+Route::get('/supplier/fetchsuppliersdata', 'App\Http\Controllers\SupplierController@fetchSuppliersData');
+Route::get('/supplier/{id}/fetchsupplierdatabyid', 'App\Http\Controllers\SupplierController@fetchSupplierDataById');

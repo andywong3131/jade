@@ -27,7 +27,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Manage Branches</h1>
+            <h1 class="m-0 text-dark">Manage Supplier</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -46,17 +46,18 @@
         <div class="col-md-12 col-xs-12">
             <div id="messages"></div>
 
-            <button class="btn btn-primary" data-toggle="modal" data-target="#add-branch-modal">Add Branch</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#add-supplier-modal">Add Supplier</button>
             <br><br>
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Manage Branches</h3>
+                    <h3 class="card-title">Manage Supplier</h3>
                 </div>
                 <div class="card-body">
-                    <table id="manage-branch-table" class="table table-bordered table-striped">
+                    <table id="manage-supplier-table" class="table table-bordered table-striped">
                         <thead>
                         <tr>
+                            <th>Name</th>
                             <th>Address</th>
                             <th>Contact Number</th>
                             <th>Status</th>
@@ -76,21 +77,25 @@
     </section>
     <!-- /.content -->
 
-<!-- create branch modal -->
-<div class="modal fade" tabindex="-1" role="dialog" id="add-branch-modal">
+<!-- create item class modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="add-supplier-modal">
     <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title">Add Branch</h4>
+            <h4 class="modal-title">Add Supplier</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
 
         {{-- <form role="form" action="#" method="post" id="createForm"> --}}
-        {!! Form::open(['id' => 'create-branch-form', 'url' => 'branch/store', 'method' => 'POST']) !!}
+        {!! Form::open(['id' => 'create-supplier-form', 'url' => 'supplier/store', 'method' => 'POST']) !!}
         <div class="modal-body">
             <div class="form-group">
+                {{ Form::label('name', 'Name') }}
+                {{ Form::text('name', '', ['class' => 'form-control', 'id' => 'name', 'required' => true, 'placeholder' => 'Enter name', 'autocomplete' => 'off']) }}
+            </div>
+            <div class="form-group">
                 {{ Form::label('address', 'Address') }}
-                {{ Form::text('address', '', ['class' => 'form-control', 'id' => 'address', 'required' => true, 'placeholder' => 'Enter address', 'autocomplete' => 'off']) }}
+                {{ Form::text('address', '', ['class' => 'form-control', 'id' => 'address', 'placeholder' => 'Enter address', 'autocomplete' => 'off']) }}
             </div>
             <div class="form-group">
                 {{ Form::label('contact-number', 'Contact Number') }}
@@ -114,21 +119,25 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!-- edit branch modal -->
-<div class="modal fade" tabindex="-1" role="dialog" id="edit-branch-modal">
+<!-- edit item class modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="edit-supplier-modal">
     <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title">Edit Branch</h4>
+            <h4 class="modal-title">Edit Supplier</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
 
         {{-- <form role="form" action="#" method="post" id="createForm"> --}}
-        {!! Form::open(['id' => 'update-branch-form', 'url' => 'branch', 'method' => 'POST']) !!}
+        {!! Form::open(['id' => 'update-supplier-form', 'url' => 'supplier', 'method' => 'POST']) !!}
         <div class="modal-body">
             <div class="form-group">
+                {{ Form::label('edit-name', 'Name') }}
+                {{ Form::text('edit-name', '', ['class' => 'form-control', 'id' => 'edit-name', 'required' => true, 'placeholder' => 'Enter name', 'autocomplete' => 'off']) }}
+            </div>
+            <div class="form-group">
                 {{ Form::label('edit-address', 'Address') }}
-                {{ Form::text('edit-address', '', ['class' => 'form-control', 'id' => 'edit-address', 'required' => true, 'placeholder' => 'Enter address', 'autocomplete' => 'off']) }}
+                {{ Form::text('edit-address', '', ['class' => 'form-control', 'id' => 'edit-address', 'placeholder' => 'Enter address', 'autocomplete' => 'off']) }}
             </div>
             <div class="form-group">
                 {{ Form::label('edit-contact-number', 'Contact Number') }}
@@ -152,16 +161,16 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!-- remove brand modal -->
-<div class="modal fade" tabindex="-1" role="dialog" id="remove-branch-modal">
+<!-- remove item class modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="remove-supplier-modal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Remove Branch</h4>
+                <h4 class="modal-title">Remove Supplier</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
 
-            {!! Form::open(['id' => 'remove-branch-form', 'url' => 'branch', 'method' => 'DELETE']) !!}
+            {!! Form::open(['id' => 'remove-supplier-form', 'url' => 'supplier', 'method' => 'DELETE']) !!}
                 @csrf
                 <div class="modal-body">
                     <p>Do you really want to remove?</p>
@@ -214,5 +223,5 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dist/js/demo.js') }}"></script>
 
-<script src="{{ asset('js/branch.js') }}"></script>
+<script src="{{ asset('js/supplier.js') }}"></script>
 @endpush

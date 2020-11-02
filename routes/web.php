@@ -19,3 +19,9 @@ Route::get('/', function () {
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index');
 Route::get('/about', 'App\Http\Controllers\AboutController@index');
+Route::get('/branch', 'App\Http\Controllers\BranchController@index');
+Route::post('/branch/store', 'App\Http\Controllers\BranchController@store');
+Route::post('/branch/{id}', 'App\Http\Controllers\BranchController@update');
+Route::delete('/branch/{id}', 'App\Http\Controllers\BranchController@destroy');
+Route::get('/branch/fetchbranchesdata', 'App\Http\Controllers\BranchController@fetchBranchesData')->name('branch.fetchBranchesData');
+Route::get('/branch/{id}/fetchbranchdatabyid', 'App\Http\Controllers\BranchController@fetchBranchDataById')->name('fetchBranchDataById');

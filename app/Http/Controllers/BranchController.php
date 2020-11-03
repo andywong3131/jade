@@ -110,7 +110,7 @@ class BranchController extends Controller
     }
 
     public function fetchBranchDataById($id) {
-        $branch = Branch::findOrFail($id);
-        echo json_encode($branch);
+        $data = Branch::findOrFail($id);
+        echo json_encode($data);
     }
 }

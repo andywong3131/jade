@@ -23,21 +23,21 @@
 @endpush
 @section('content')
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-        <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Manage Items</h1>
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-        </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-    </div>
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Manage Items</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard v1</li>
+                </ol>
+            </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
     <!-- /.content-header -->
 
     <!-- Main content -->
@@ -111,7 +111,7 @@
                 <label for="active">With Serial Number</label>
                 <select class="form-control" id="with-serial-number" name="with-serial-number">
                     <option value="1">Yes</option>
-                    <option value="2" selected>No</option>
+                    <option value="0" selected>No</option>
                 </select>
             </div>
             <div class="form-group">
@@ -122,7 +122,7 @@
                 <label for="active">Status</label>
                 <select class="form-control" id="active" name="active">
                     <option value="1">Active</option>
-                    <option value="2">Inactive</option>
+                    <option value="0">Inactive</option>
                 </select>
             </div>
         </div>
@@ -168,7 +168,7 @@
                 <label for="active">With Serial Number</label>
                 <select class="form-control" id="edit-with-serial-number" name="edit-with-serial-number">
                     <option value="1">Yes</option>
-                    <option value="2">No</option>
+                    <option value="0">No</option>
                 </select>
             </div>
             <div class="form-group">
@@ -179,7 +179,7 @@
                 <label for="active">Status</label>
                 <select class="form-control" id="edit-active" name="edit-active">
                     <option value="1">Active</option>
-                    <option value="2">Inactive</option>
+                    <option value="0">Inactive</option>
                 </select>
             </div>
         </div>

@@ -119,7 +119,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="gross_amount" class="col-sm-5 col-form-label">Search Item</label>
+                            <label for="search-item" class="col-sm-5 col-form-label">Search Item</label>
                             <div class="col-sm-7">
                                 <select id="search-item" class="form-control">
                                     <option></option>

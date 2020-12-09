@@ -58,8 +58,6 @@
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Item Class</th>
-                            <th>Code</th>
                             <th>UPC</th>
                             <th>Price</th>
                             <th>Status</th>
@@ -94,14 +92,6 @@
             <div class="form-group">
                 {{ Form::label('name', 'Name') }}
                 {{ Form::text('name', '', ['class' => 'form-control', 'id' => 'name', 'required' => true, 'placeholder' => 'Enter name', 'autocomplete' => 'off']) }}
-            </div>
-            <div class="form-group">
-                {{ Form::label('item-class-id', 'Item Class') }}
-                {{ Form::select('item-class-id', $itemClasses, null, ['class' => 'form-control', 'id' => 'item-class-id', 'required' => true, 'placeholder' => 'Select item class', 'autocomplete' => 'off']) }}
-            </div>
-            <div class="form-group">
-                {{ Form::label('code', 'Code') }}
-                {{ Form::text('code', '', ['class' => 'form-control', 'id' => 'code', 'placeholder' => 'Enter code', 'autocomplete' => 'off']) }}
             </div>
             <div class="form-group">
                 {{ Form::label('price', 'Selling Price') }}
@@ -151,14 +141,6 @@
             <div class="form-group">
                 {{ Form::label('edit-name', 'Name') }}
                 {{ Form::text('edit-name', '', ['class' => 'form-control', 'id' => 'edit-name', 'required' => true, 'placeholder' => 'Enter name', 'autocomplete' => 'off']) }}
-            </div>
-            <div class="form-group">
-                {{ Form::label('item-class-id', 'Item Class') }}
-                {{ Form::select('edit-item-class-id', $itemClasses, null, ['class' => 'form-control', 'id' => 'edit-item-class-id', 'required' => true, 'placeholder' => 'Select item class', 'autocomplete' => 'off']) }}
-            </div>
-            <div class="form-group">
-                {{ Form::label('edit-code', 'Code') }}
-                {{ Form::text('edit-code', '', ['class' => 'form-control', 'id' => 'edit-code', 'placeholder' => 'Enter code', 'autocomplete' => 'off']) }}
             </div>
             <div class="form-group">
                 {{ Form::label('edit-price', 'Selling Price') }}

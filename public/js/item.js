@@ -7,8 +7,6 @@ $(document).ready(function() {
         'order': [],
         'columns': [
             { data: 'name' },
-			{ data: 'item_class' },
-			{ data: 'code' },
             { data: 'upc' },
             { data: 'price' },
             { data: 'active' },
@@ -52,8 +50,6 @@ function editItem(id) {
         dataType: 'json',
         success: function(data) {
             $('#edit-name').val(data.name);
-            $('#edit-item-class-id').val(data.item_class_id);
-            $('#edit-code').val(data.code);
             $('#edit-upc').val(data.upc);
             $('#edit-price').val(data.price);
             $('#edit-with-serial-number').val(data.with_serial_number);

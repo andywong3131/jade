@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Item;
-use App\Models\ItemClass;
 
 class ItemController extends Controller
 {
@@ -15,10 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        // $test = Item::find(1)->itemClass;
-        // return $test;
-        $itemClasses = ItemClass::pluck('name', 'id');
-        return view('item.index', compact('itemClasses'));
+        return view('item.index');
     }
 
     /**
@@ -40,9 +36,7 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $item = new Item;
-        $item->item_class_id = $request->input('item-class-id');
         $item->name = $request->input('name');
-        $item->code = $request->input('code');
         $item->upc = $request->input('upc');
         $item->price = $request->input('price');
         $item->with_serial_number = $request->input('with-serial-number');
@@ -83,9 +77,7 @@ class ItemController extends Controller
     public function update(Request $request, $id)
     {
         $item = Item::find($id);
-        $item->item_class_id = $request->input('edit-item-class-id');
         $item->name = $request->input('edit-name');
-        $item->code = $request->input('edit-code');
         $item->upc = $request->input('edit-upc');
         $item->price = $request->input('edit-price');
         $item->with_serial_number = $request->input('edit-with-serial-number');
@@ -108,7 +100,7 @@ class ItemController extends Controller
     }
 
     public function fetchItemsData() {
-        $data = Item::select('items.id', 'item_classes.name AS item_class', 'items.name', 'code', 'upc', 'price', 'items.active')->join('item_classes', 'item_classes.id', '=', 'items.item_class_id')->orderBy('id', 'DESC')->get();
+        $data = Item::select('items.id', 'items.name', 'upc', 'price', 'items.active')->orderBy('id', 'DESC')->get();
 
         foreach ($data as $key => $val) {
             $data[$key]->active = ($data[$key]->active === 1) ? '<span class="badge badge-success">Active</span>' : '<span class="badge badge-warning">Inactive</span>';

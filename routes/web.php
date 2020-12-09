@@ -60,6 +60,16 @@ Route::get('/itemin/test2', 'App\Http\Controllers\ItemInController@test2');
 Route::get('/itemin/fetchcontrolnumber', 'App\Http\Controllers\ItemInController@fetchControlNumber');
 Route::get('/itemin/fetchiteminsdata', 'App\Http\Controllers\ItemInController@fetchItemInsData');
 
+
+
+Route::get('/sale', 'App\Http\Controllers\SaleController@index');
+Route::get('/sale/create', 'App\Http\Controllers\SaleController@create');
+Route::get('/sale/fetchserialnumbers/{itemId}/{branchId}', 'App\Http\Controllers\SaleController@fetchSerialNumbers');
+Route::get('/itemin/search', 'App\Http\Controllers\ItemInController@search');
+Route::get('/itemin/createitemin', 'App\Http\Controllers\ItemInController@createItemIn');
+Route::get('/itemin/store', 'App\Http\Controllers\ItemInController@store');
+Route::get('/itemin/fetchcontrolnumber', 'App\Http\Controllers\ItemInController@fetchControlNumber');
+Route::get('/itemin/fetchiteminsdata', 'App\Http\Controllers\ItemInController@fetchItemInsData');
 // Route::post('/item/store', 'App\Http\Controllers\ItemController@store');
 // Route::post('/item/{id}', 'App\Http\Controllers\ItemController@update');
 // Route::delete('/item/{id}', 'App\Http\Controllers\ItemController@destroy');
